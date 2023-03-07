@@ -1,3 +1,3 @@
 #!/bin/bash
-echo Hello
+yarn install
 exec vite dev

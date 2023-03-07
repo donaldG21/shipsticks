@@ -28,7 +28,7 @@ services:
       - mongodb
   vite:
     <<: *x-backend
-    # entrypoint: ./.docker/docker-vite.sh
+    entrypoint: ./.docker/docker-vite.sh
     tty: true
     ports:
       - "3036:3036"

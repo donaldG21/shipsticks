@@ -15,6 +15,5 @@ WORKDIR /app
 ADD Gemfile* /app
 ADD package* /app
 RUN bundle install
-RUN yarn install
 
 # CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]
