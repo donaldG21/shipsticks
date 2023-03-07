@@ -39,6 +39,8 @@ services:
     volumes:
       - .:/app
       - /app/node_modules
+    depends_on:
+      - rails-api
 
 volumes:
   mongodb-data:
