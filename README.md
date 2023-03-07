@@ -1,24 +1,24 @@
-# README
+# ShipSticks Ruby on Rails Challenge
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Description
+Create a JSON REST-style API that processes and exposes data about company products.
 
-Things you may want to cover:
+## Installation
+Please have docker installed to run app with a single command.
+## Running the app
+With docker installed, docker-compose up should be all you need to run the app.
+```bash
+# development
+$ docker-compose up -d
+```
 
-* Ruby version
+This will launch three containers (the rails api app, mongodb instance, and the vite dev server) in the default local ports (3000, 27107 and 3036 respectively).
 
-* System dependencies
+## See it in Action
+Access the home page at http://localhost:3000
 
-* Configuration
+## Stay in touch
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Author - [Donald Granados](https://linkedin.com/in/donaldgranados)
+- Github - https://github.com/donaldG21
+- Email  - donald.g@me.com
