@@ -14,26 +14,11 @@ class Api::V1::ProductsController < ApplicationController
   # dimensions: 48”l X 14”w X 12”h (@ 42lbs) the API should send me back “Golf - Small”.)
   # GET /products/search?height
   def show
-    # 2. Shows ONE product that best matches a
-    # given length/width/height/weight query
-    # (For example, if I make an API request
-    # for a product with the following dimensions:
-    # 48”l X 14”w X 12”h (@ 42lbs) the API should
-    # send me back “Golf - Small”.)
     params.require([:weight, :height, :width, :length])
+    product = Product.search(params)
 
-    products = Product.where(
-      :weight.gte => params[:weight],
-      :height.gte => params[:height],
-      :width.gte => params[:width],
-      :length.gte => params[:length]
-    )
-
-    @product = products.min_by { |p| p.weight * p.height * p.width * p.length }
-
-    render json: @product, status: 200
+    render json: product, status: 200
   end
-
 
   # CREATE
   # 1. Creates a product

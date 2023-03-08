@@ -1,8 +1,8 @@
 import { QueryClientProvider } from '@tanstack/react-query';
-import { queryClient } from 'lib/react-query';
+import { queryClient } from 'libs/react-query';
 import { FC } from 'react';
 import Layout from '../frontend/components/Layout/Layout';
-import { AppContextProvider } from '../frontend/context/AppContext';
+import { AppContextProvider } from './contexts/AppContext';
 import Home from './features/home/Home';
 
 const App: FC = () => {

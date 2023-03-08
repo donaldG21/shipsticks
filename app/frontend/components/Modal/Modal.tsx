@@ -1,7 +1,7 @@
 import { Dialog, Transition } from '@headlessui/react';
 import { useProducts } from 'features/products/api/getProducts';
 import { FC, Fragment, useContext, useState } from 'react';
-import { AppContext } from '../../context/AppContext';
+import { AppContext } from '../../contexts/AppContext';
 import ShippingForm from '../Form/ShippingForm';
 
 interface ModalProps {}

@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Disclosure, Transition } from '@headlessui/react';
 import { Bars3Icon } from '@heroicons/react/24/outline';
-import ShipSticksLogo from '../../../assets/images/ShipSticksLogo.png';
+import ShipSticksLogo from '@images/ShipSticksLogo.png';
 
 const navigation1 = [
   { name: 'Ship Golf Clubs', href: '#' },
@@ -30,7 +30,7 @@ type Props = {
 const Layout: FC<Props> = ({ children }) => {
   return (
     <>
-      <div className="h-[800px] min-h-full bg-[url('/assets/MobileBackground.jpeg')] bg-cover md:h-[886px] md:bg-[url('/assets/Background.png')] lg:h-[435px]">
+      <div className="h-[800px] min-h-full bg-cover bg-hero-mobile md:bg-hero md:h-[886px] lg:h-[435px]">
         <Disclosure as="nav" className="border-b border-[#191818d2] bg-neutral-800">
           {({ open }) => (
             <>

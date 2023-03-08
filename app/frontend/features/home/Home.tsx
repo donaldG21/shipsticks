@@ -1,6 +1,6 @@
 import { FC, useContext } from 'react';
 import Modal from '../../components/Modal/Modal';
-import { AppContext } from '../../context/AppContext';
+import { AppContext } from '../../contexts/AppContext';
 import Hero from '../../components/Hero/Hero';
 
 interface HomeProps {}
@@ -23,7 +23,7 @@ const Home: FC<HomeProps> = ({}) => {
       {product && (
         <div className="m-20 flex flex-row items-center justify-center rounded-2xl bg-white">
           <h2 className="p-8 px-3 text-center text-xl font-semibold">
-            Use our {product.name} to ship!
+            Use our "{`${product.type} - ${product.name}`}" to ship!
           </h2>
         </div>
       )}

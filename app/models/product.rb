@@ -10,14 +10,21 @@ class Product
 
   def self.get_each_max_dimension
     {
-      height: 10,
-      width: 10,
-      length: 10,
-      weight: 10
+      height: desc(:height).limit(1).first.height,
+      width: desc(:width).limit(1).first.width,
+      length: desc(:length).limit(1).first.length,
+      weight: desc(:weight).limit(1).first.weight
     }
   end
 
   def self.search(params)
-    nil
+    products = where(
+      :weight.gte => params[:weight],
+      :height.gte => params[:height],
+      :width.gte => params[:width],
+      :length.gte => params[:length]
+    )
+
+    products.min_by { |p| p.weight * p.height * p.width * p.length }
   end
 end
