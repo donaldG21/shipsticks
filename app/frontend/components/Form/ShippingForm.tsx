@@ -28,7 +28,7 @@ export const ShippingForm: FC<ShippingFormProps> = ({ onSubmit, product }) => {
           className={classNames(
             errors.width
               ? 'border-red-600 focus:border-red-600'
-              : 'focus:border-blue-400 border-gray-300',
+              : 'focus:border-[#5fd063] border-gray-300',
             'w-full border-b border-solid py-2 px-2 text-neutral-500 outline-none',
           )}
           autoFocus
@@ -39,7 +39,7 @@ export const ShippingForm: FC<ShippingFormProps> = ({ onSubmit, product }) => {
           className={classNames(
             errors.length
               ? 'border-red-600 focus:border-red-600'
-              : 'focus:border-blue-400 border-gray-300',
+              : 'focus:border-[#5fd063] border-gray-300',
             'w-full border-b border-solid py-2 px-2 text-neutral-500 outline-none',
           )}
           type="number"
@@ -62,7 +62,7 @@ export const ShippingForm: FC<ShippingFormProps> = ({ onSubmit, product }) => {
           className={classNames(
             errors.height
               ? 'border-red-600 focus:border-red-600'
-              : 'focus:border-blue-400 border-gray-300',
+              : 'focus:border-[#5fd063] border-gray-300',
             'w-full border-b border-solid py-2 px-2 text-neutral-500 outline-none',
           )}
           type="number"
@@ -72,7 +72,7 @@ export const ShippingForm: FC<ShippingFormProps> = ({ onSubmit, product }) => {
           className={classNames(
             errors.weight
               ? 'border-red-600 focus:border-red-600'
-              : 'focus:border-blue-400 border-gray-300',
+              : 'focus:border-[#5fd063] border-gray-300',
             'w-full border-b border-solid py-2 px-2 text-neutral-500 outline-none',
           )}
           type="number"
@@ -100,7 +100,7 @@ export const ShippingForm: FC<ShippingFormProps> = ({ onSubmit, product }) => {
       <div className="mt-4 flex justify-end pr-5">
         <button
           type="submit"
-          className="inline-flex justify-center rounded border border-transparent bg-[#5fd063] px-4 py-2 text-base font-semibold text-green-100 shadow-[0_3px_0_0_#4fab55] hover:bg-[#4fab55] focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2"
+          className="inline-flex justify-center rounded border border-transparent bg-[#5fd063] px-4 py-2 text-base font-semibold text-white shadow-button-inset hover:bg-[#4fab55] focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2"
         >
           Calculate
         </button>
