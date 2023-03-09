@@ -16,7 +16,7 @@ export const getProducts = ({ weight, height, length, width }: any): Promise<Pro
 
 type QueryFnType = typeof getProducts;
 
-export const useProducts = (dimensions: Dimensions) => {
+export const useProducts = (dimensions: Dimensions | undefined) => {
   return useQuery<ExtractFnReturnType<QueryFnType>>({
     queryKey: ['products', dimensions],
     queryFn: () => getProducts(dimensions),
