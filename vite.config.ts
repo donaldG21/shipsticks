@@ -1,5 +1,4 @@
 import { defineConfig } from 'vite';
-import { resolve } from 'path';
 import react from '@vitejs/plugin-react';
 import RubyPlugin from 'vite-plugin-ruby';
 import WindiCSS from 'vite-plugin-windicss';
@@ -19,15 +18,5 @@ export default defineConfig({
         dirs: ['app/views', 'app/frontend'], // or app/javascript, or app/packs
       },
     }),
-  ],
-  resolve: {
-    alias: {
-      '@components': resolve(__dirname, 'app/frontend/components'),
-      '@config': resolve(__dirname, 'app/frontend/config'),
-      '@features': resolve(__dirname, 'app/frontend/features'),
-      '@contexts': resolve(__dirname, 'app/frontend/contexts'),
-      '@images': resolve(__dirname, 'app/frontend/images'),
-      '@types': resolve(__dirname, 'app/frontend/types'),
-    }
-  }
+  ]
 });

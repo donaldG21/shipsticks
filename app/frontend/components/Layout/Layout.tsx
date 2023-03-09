@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Disclosure, Transition } from '@headlessui/react';
 import { Bars3Icon } from '@heroicons/react/24/outline';
-import ShipSticksLogo from '@images/ShipSticksLogo.png';
+import ShipSticksLogo from '@/images/ShipSticksLogo.png';
 
 const navigation1 = [
   { name: 'Ship Golf Clubs', href: '#' },

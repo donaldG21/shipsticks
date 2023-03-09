@@ -7,13 +7,11 @@ RUN curl -sL https://deb.nodesource.com/setup_18.x | bash -\
     libpq-dev \
   && apt-get upgrade -qq \
   && apt-get clean \
-  && rm -rf /var/lib/apt/lists/*\
-  && npm install -g yarn@1
+  && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
 ADD Gemfile* /app
 ADD package* /app
 RUN bundle install
-
-# CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]
+RUN npm install
