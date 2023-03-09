@@ -5,7 +5,7 @@ import { ProductCard } from 'components/Product/ProductCard';
 import { Button } from 'components/Button';
 import { Hero } from 'components/Hero';
 import { ShippingForm } from 'components/Form';
-import { useProducts } from 'features/products/api/getProducts';
+import { useProducts } from 'features/products/api/useProducts';
 
 interface HomeProps {}
 

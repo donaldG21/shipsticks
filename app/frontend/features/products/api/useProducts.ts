@@ -3,7 +3,7 @@ import { axios } from 'libs/axios';
 import { ExtractFnReturnType } from 'libs/react-query';
 import { Dimensions, Product } from 'types/product';
 
-export const getProducts = ({ weight, height, length, width }: any): Promise<Product> => {
+const getProducts = ({ weight, height, length, width }: any): Promise<Product> => {
   return axios.get(`/products/search`, {
     params: {
       weight,
