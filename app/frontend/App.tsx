@@ -3,7 +3,7 @@ import { queryClient } from 'libs/react-query';
 import { FC } from 'react';
 import { Layout } from 'components/Layout';
 import { AppContextProvider } from 'contexts/AppContext';
-import Home from 'features/home';
+import { Home } from 'features/home';
 
 const App: FC = () => {
   return (

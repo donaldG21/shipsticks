@@ -14,7 +14,7 @@ export const ShippingForm: FC<ShippingFormProps> = ({ onSubmit }) => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitted },
+    formState: { errors, isSubmitted, isSubmitting, isLoading },
   } = useForm();
   const { product, productsMaxDimensions: { weight, height, length, width }} = useContext(AppContext);
 
@@ -86,7 +86,7 @@ export const ShippingForm: FC<ShippingFormProps> = ({ onSubmit }) => {
           <p className="text-xs text-red-600">Weight is { errors.weight?.type === 'required' ? 'required' : 'too heavy' }.</p>
         )}
       </div>
-      {isSubmitted && !product && Object.keys(errors).length === 0 && (
+      {isSubmitted && !isLoading && !product && Object.keys(errors).length === 0 && (
         <p className="px-3 text-sm text-red-600">
           We're sorry, we currently do not support shipping items this size.
         </p>

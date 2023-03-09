@@ -7,13 +7,13 @@ import { Hero } from 'components/Hero';
 
 interface HomeProps {}
 
-const Home: FC<HomeProps> = ({}) => {
+export const Home: FC<HomeProps> = ({}) => {
   const { product, setIsModalOpen } = useContext(AppContext);
 
   return (
     <>
       <Hero />
-      <div className="mt-6 mb-10 flex justify-center">
+      <div className="mt-12 mb-10 md:mt-7 flex justify-center">
         <Button text={'Launch Calculator'} onClick={() => setIsModalOpen(true)}  />
       </div>
       {product && (
@@ -25,5 +25,3 @@ const Home: FC<HomeProps> = ({}) => {
     </>
   );
 };
-
-export default Home;
