@@ -4,11 +4,19 @@ import { AppContext } from 'contexts/AppContext';
 import { ProductCard } from 'components/Product/ProductCard';
 import { Button } from 'components/Button';
 import { Hero } from 'components/Hero';
+import { ShippingForm } from 'components/Form';
+import { useProducts } from 'features/products/api/getProducts';
 
 interface HomeProps {}
 
 export const Home: FC<HomeProps> = ({}) => {
-  const { product, setIsModalOpen } = useContext(AppContext);
+  const { dimensions, setDimensions, setIsModalOpen } = useContext(AppContext);
+  const { data: product } = useProducts(dimensions);
+
+  const onSubmit = (values: any) => {
+    setDimensions(values);
+    setTimeout(() => setIsModalOpen(false), 5000);
+  };
 
   return (
     <>
@@ -21,7 +29,9 @@ export const Home: FC<HomeProps> = ({}) => {
           <ProductCard product={product}/>
         </div>
       )}
-      <Modal />
+      <Modal>
+        <ShippingForm product={product} onSubmit={onSubmit} />
+      </Modal>
     </>
   );
 };

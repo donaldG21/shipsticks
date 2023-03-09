@@ -1,23 +1,13 @@
 import { Dialog, Transition } from '@headlessui/react';
-import { useProducts } from 'features/products/api/getProducts';
-import { FC, Fragment, useContext, useState } from 'react';
+import { FC, Fragment, useContext } from 'react';
 import { AppContext } from 'contexts/AppContext';
-import { ShippingForm } from 'components/Form/ShippingForm';
 
-interface ModalProps {}
+interface ModalProps {
+  children: JSX.Element;
+}
 
-export const Modal: FC<ModalProps> = () => {
-  const { setProduct, isModalOpen, setIsModalOpen } = useContext(AppContext);
-
-  const [dimensions, setDimensions] = useState();
-  const { isLoading, error, data } = useProducts(dimensions);
-
-  setProduct(data);
-
-  const onSubmit = (values: any) => {
-    setDimensions(values);
-    setTimeout(() => setIsModalOpen(false), 5000);
-  };
+export const Modal: FC<ModalProps> = ({ children }) => {
+  const { isModalOpen, setIsModalOpen } = useContext(AppContext);
 
   return (
     <>
@@ -59,7 +49,7 @@ export const Modal: FC<ModalProps> = () => {
                       the dimensions of the package that you would like to send.
                     </p>
                   </div>
-                  <ShippingForm onSubmit={onSubmit} />
+                  {children}
                 </Dialog.Panel>
               </Transition.Child>
             </div>

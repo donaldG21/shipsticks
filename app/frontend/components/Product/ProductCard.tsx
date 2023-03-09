@@ -1,8 +1,8 @@
 import { FC } from 'react';
-import Product from 'types/product';
+import { Product } from 'types/product';
 
 interface ProductCardProps {
-  product: Product;
+  product: any;
 }
 
 export const ProductCard: FC<ProductCardProps> = ({ product }) => {

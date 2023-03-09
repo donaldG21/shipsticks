@@ -4,19 +4,20 @@ import { useForm } from 'react-hook-form';
 
 interface ShippingFormProps {
   onSubmit: (data: any) => void;
+  product: any;
 }
 
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(' ');
 }
 
-export const ShippingForm: FC<ShippingFormProps> = ({ onSubmit }) => {
+export const ShippingForm: FC<ShippingFormProps> = ({ onSubmit, product }) => {
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitted, isSubmitting, isLoading },
   } = useForm();
-  const { product, productsMaxDimensions: { weight, height, length, width }} = useContext(AppContext);
+  const { productsMaxDimensions: { weight, height, length, width }} = useContext(AppContext);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -86,7 +87,7 @@ export const ShippingForm: FC<ShippingFormProps> = ({ onSubmit }) => {
           <p className="text-xs text-red-600">Weight is { errors.weight?.type === 'required' ? 'required' : 'too heavy' }.</p>
         )}
       </div>
-      {isSubmitted && !isLoading && !product && Object.keys(errors).length === 0 && (
+      {isSubmitted && !product && Object.keys(errors).length === 0 && (
         <p className="px-3 text-sm text-red-600">
           We're sorry, we currently do not support shipping items this size.
         </p>

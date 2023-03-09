@@ -1,9 +1,12 @@
-export default interface Product {
-  id: string;
-  name: string;
-  type: string;
+export type Dimensions = {
+  weight: number;
   height: number;
   length: number;
   width: number;
-  weight: number;
+};
+
+export type Product = Dimensions & {
+  id: string;
+  name: string;
+  type: string;
 }

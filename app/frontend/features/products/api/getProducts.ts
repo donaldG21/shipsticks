@@ -1,14 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { axios } from 'libs/axios';
 import { ExtractFnReturnType } from 'libs/react-query';
-import Product from 'types/product';
-
-export type DimensionsDto = {
-  weight: number;
-  height: number;
-  length: number;
-  width: number;
-};
+import { Dimensions, Product } from 'types/product';
 
 export const getProducts = ({ weight, height, length, width }: any): Promise<Product> => {
   return axios.get(`/products/search`, {
@@ -23,7 +16,7 @@ export const getProducts = ({ weight, height, length, width }: any): Promise<Pro
 
 type QueryFnType = typeof getProducts;
 
-export const useProducts = (dimensions: DimensionsDto | undefined) => {
+export const useProducts = (dimensions: Dimensions) => {
   return useQuery<ExtractFnReturnType<QueryFnType>>({
     queryKey: ['products', dimensions],
     queryFn: () => getProducts(dimensions),
