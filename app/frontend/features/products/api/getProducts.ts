@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
-import { axios } from '../../../libs/axios';
-import { ExtractFnReturnType } from '../../../libs/react-query';
-import Product from '../../../types/product';
+import { axios } from 'libs/axios';
+import { ExtractFnReturnType } from 'libs/react-query';
+import Product from 'types/product';
 
 export type DimensionsDto = {
   weight: number;

@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Disclosure, Transition } from '@headlessui/react';
 import { Bars3Icon } from '@heroicons/react/24/outline';
-import ShipSticksLogo from '@/images/ShipSticksLogo.png';
+import ShipSticksLogo from 'images/ShipSticksLogo.png';
 
 const navigation1 = [
   { name: 'Ship Golf Clubs', href: '#' },
@@ -27,7 +27,7 @@ type Props = {
   children: JSX.Element;
 };
 
-const Layout: FC<Props> = ({ children }) => {
+export const Layout: FC<Props> = ({ children }) => {
   return (
     <>
       <div className="h-[800px] min-h-full bg-cover bg-hero-mobile md:bg-hero md:h-[886px] lg:h-[435px]">
@@ -126,5 +126,3 @@ const Layout: FC<Props> = ({ children }) => {
     </>
   );
 };
-
-export default Layout;

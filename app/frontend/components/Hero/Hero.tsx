@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 interface HeroProps {}
 
-const Hero: FC<HeroProps> = ({}) => {
+export const Hero: FC<HeroProps> = ({}) => {
   return (
     <header>
       <div className="mx-auto mb-5 mt-12 flex max-w-7xl flex-col items-center px-4 lg:mt-[100px]">
@@ -16,5 +16,3 @@ const Hero: FC<HeroProps> = ({}) => {
     </header>
   );
 };
-
-export default Hero;

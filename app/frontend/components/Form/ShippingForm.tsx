@@ -10,7 +10,7 @@ function classNames(...classes: any) {
   return classes.filter(Boolean).join(' ');
 }
 
-const ShippingForm: FC<ShippingFormProps> = ({ onSubmit }) => {
+export const ShippingForm: FC<ShippingFormProps> = ({ onSubmit }) => {
   const {
     register,
     handleSubmit,
@@ -107,5 +107,3 @@ const ShippingForm: FC<ShippingFormProps> = ({ onSubmit }) => {
     </form>
   );
 };
-
-export default ShippingForm;

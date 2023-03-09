@@ -1,9 +1,9 @@
-import { Button } from './../../components/Button/Button';
-import { ProductCard } from './../../components/Product/ProductCard';
 import { FC, useContext } from 'react';
-import Modal from '../../components/Modal/Modal';
-import { AppContext } from '../../contexts/AppContext';
-import Hero from '../../components/Hero/Hero';
+import { Modal } from 'components/Modal/Modal';
+import { AppContext } from 'contexts/AppContext';
+import { ProductCard } from 'components/Product/ProductCard';
+import { Button } from 'components/Button';
+import { Hero } from 'components/Hero';
 
 interface HomeProps {}
 

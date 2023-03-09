@@ -1,12 +1,12 @@
 import { Dialog, Transition } from '@headlessui/react';
 import { useProducts } from 'features/products/api/getProducts';
 import { FC, Fragment, useContext, useState } from 'react';
-import { AppContext } from '../../contexts/AppContext';
-import ShippingForm from '../Form/ShippingForm';
+import { AppContext } from 'contexts/AppContext';
+import { ShippingForm } from 'components/Form/ShippingForm';
 
 interface ModalProps {}
 
-const Modal: FC<ModalProps> = () => {
+export const Modal: FC<ModalProps> = () => {
   const { setProduct, isModalOpen, setIsModalOpen } = useContext(AppContext);
 
   const [dimensions, setDimensions] = useState();
@@ -69,5 +69,3 @@ const Modal: FC<ModalProps> = () => {
     </>
   );
 };
-
-export default Modal;
