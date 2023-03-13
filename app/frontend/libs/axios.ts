@@ -1,4 +1,4 @@
-import Axios from 'axios';
+import Axios, { AxiosError } from 'axios';
 
 import { API_URL } from 'configs';
 
@@ -10,10 +10,11 @@ axios.interceptors.response.use(
   (response) => {
     return response.data;
   },
-  (error) => {
-    const message = error.response?.data?.message || error.message;
-    console.log(message);
+  (error: AxiosError) => {
+    const message = error.response?.data || error.message;
+    console.log(error);
+    error.response;
 
-    return Promise.reject(error);
-  },
+    return Promise.reject(message);
+  }
 );

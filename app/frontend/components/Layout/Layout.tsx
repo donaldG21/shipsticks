@@ -1,6 +1,7 @@
-import { FC } from 'react';
 import { Disclosure, Transition } from '@headlessui/react';
 import { Bars3Icon } from '@heroicons/react/24/outline';
+import { FC, Fragment } from 'react';
+
 import ShipSticksLogo from 'images/ShipSticksLogo.png';
 
 const navigation1 = [
@@ -30,7 +31,7 @@ type Props = {
 export const Layout: FC<Props> = ({ children }) => {
   return (
     <>
-      <div className="h-[800px] min-h-full bg-cover bg-hero-mobile md:bg-hero md:h-[886px] lg:h-[435px]">
+      <div className="bg-hero-mobile md:bg-hero h-[800px] min-h-full bg-cover md:h-[886px] lg:h-[435px]">
         <Disclosure as="nav" className="border-b border-[#191818d2] bg-neutral-800">
           {({ open }) => (
             <>

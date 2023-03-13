@@ -1,5 +1,6 @@
-import type { Dimensions } from 'types/product';
 import { createContext, Dispatch, FC, ReactNode, SetStateAction, useState } from 'react';
+
+import type { Dimensions } from 'types/product';
 
 interface AppContextType {
   setIsModalOpen: Dispatch<SetStateAction<boolean>>;
@@ -24,7 +25,9 @@ export const AppContext = createContext<AppContextType>({
 export const AppContextProvider: FC<Props> = ({ children }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [dimensions, setDimensions] = useState(undefined);
-  const productsMaxDimensions = JSON.parse(document.getElementById('root')?.getAttribute('products_max_dimensions') || '{}');
+  const productsMaxDimensions = JSON.parse(
+    document.getElementById('root')?.getAttribute('products_max_dimensions') || '{}'
+  );
 
   return (
     <AppContext.Provider
