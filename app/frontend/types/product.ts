@@ -9,4 +9,4 @@ export type Product = Dimensions & {
   id: string;
   name: string;
   type: string;
-}
+};

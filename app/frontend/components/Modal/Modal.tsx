@@ -1,12 +1,14 @@
 import { Dialog, Transition } from '@headlessui/react';
-import { FC, Fragment, useContext } from 'react';
 import { AppContext } from 'contexts/AppContext';
+import { FC, Fragment, useContext } from 'react';
 
 interface ModalProps {
   children: JSX.Element;
+  title: any;
+  subtitle?: string;
 }
 
-export const Modal: FC<ModalProps> = ({ children }) => {
+export const Modal: FC<ModalProps> = ({ children, title, subtitle }) => {
   const { isModalOpen, setIsModalOpen } = useContext(AppContext);
 
   return (
@@ -37,18 +39,14 @@ export const Modal: FC<ModalProps> = ({ children }) => {
                 leaveTo="opacity-0 scale-95"
               >
                 <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-lg bg-white p-9 text-left align-middle shadow-xl transition-all">
-                  <Dialog.Title
-                    as="h3"
-                    className="text-lg font-medium leading-6 text-gray-900"
-                  >
-                    Shipping Calculator
+                  <Dialog.Title as="h3" className="text-lg font-medium leading-6 text-gray-900">
+                    {title}
                   </Dialog.Title>
-                  <div className="mt-2">
-                    <p className="text-sm text-gray-500">
-                      To calculate the costs associated with this shipping, please enter
-                      the dimensions of the package that you would like to send.
-                    </p>
-                  </div>
+                  {subtitle && (
+                    <div className="mt-2">
+                      <p className="text-sm text-gray-500">{subtitle}</p>
+                    </div>
+                  )}{' '}
                   {children}
                 </Dialog.Panel>
               </Transition.Child>

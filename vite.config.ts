@@ -1,9 +1,10 @@
-import { defineConfig } from 'vite';
+import { resolve } from 'path';
+
 import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite';
 import RubyPlugin from 'vite-plugin-ruby';
 import WindiCSS from 'vite-plugin-windicss';
 import tsconfigPaths from 'vite-tsconfig-paths';
-import { resolve } from 'path';
 
 export default defineConfig({
   plugins: [
@@ -19,5 +20,8 @@ export default defineConfig({
         dirs: ['app/views', 'app/frontend'], // or app/javascript, or app/packs
       },
     }),
-  ]
+  ],
+  build: {
+    sourcemap: true,
+  },
 });
