@@ -17,6 +17,7 @@ class Api::V1::ProductsController < ApplicationController
     params.require([:weight, :height, :width, :length])
     product = Product.search(params)
 
+    return not_found if !product
     render json: product, status: 200
   end
 
@@ -62,5 +63,9 @@ class Api::V1::ProductsController < ApplicationController
   # Only allow a list of trusted parameters through.
   def product_params
     params.require(:product).permit(:name, :type, :length, :width, :height, :weight)
+  end
+
+  def not_found
+    render :json => {:error => 'Not Found'}.to_json, :status => 404
   end
 end
