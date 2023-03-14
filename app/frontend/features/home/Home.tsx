@@ -1,4 +1,4 @@
-import { FC, useContext } from 'react';
+import { FC, useContext, useState } from 'react';
 import { Modal } from 'components/Modal/Modal';
 import { AppContext } from 'contexts/AppContext';
 import { ProductCard } from 'components/Product/ProductCard';
@@ -11,11 +11,16 @@ interface HomeProps {}
 
 export const Home: FC<HomeProps> = ({}) => {
   const { dimensions, setDimensions, setIsModalOpen } = useContext(AppContext);
-  const { data: product } = useProducts(dimensions);
+  const { data: product, isFetching } = useProducts(dimensions);
+  const [disableButton, setDisableButton] = useState(false);
 
   const onSubmit = (values: any) => {
+    setDisableButton(true);
     setDimensions(values);
-    setTimeout(() => setIsModalOpen(false), 5000);
+    setTimeout(() => {
+      setDisableButton(false)
+      setIsModalOpen(false)
+    }, 5000);
   };
 
   return (
@@ -36,7 +41,12 @@ export const Home: FC<HomeProps> = ({}) => {
         </div>
       )}
       <Modal>
-        <ShippingForm product={product} onSubmit={onSubmit} />
+        <ShippingForm
+          disableButton={disableButton}
+          isLoading={isFetching}
+          product={product}
+          onSubmit={onSubmit}
+        />
       </Modal>
     </>
   );
