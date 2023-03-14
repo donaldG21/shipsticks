@@ -6,6 +6,7 @@ RSpec.describe 'api/v1/products', type: :request do
 
     get('list products') do
       response(200, 'successful') do
+        let!(:product) { create(:product) }
 
         after do |example|
           example.metadata[:response][:content] = {
