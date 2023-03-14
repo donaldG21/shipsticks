@@ -1,3 +1,4 @@
+import { Button } from 'components/Button';
 import { AppContext } from 'contexts/AppContext';
 import { FC, useContext } from 'react';
 import { useForm } from 'react-hook-form';
@@ -97,13 +98,15 @@ export const ShippingForm: FC<ShippingFormProps> = ({ onSubmit, product }) => {
           Use "{`${product.type} - ${product.name}`}" to ship.
         </p>
       )}
-      <div className="mt-4 flex justify-end pr-5">
-        <button
+      <div className="mt-4 flex justify-end pr-3">
+        <Button
+          className='text-base font-semibold h-12 w-28'
+          isLoading={disableButton}
+          disabled={disableButton}
           type="submit"
-          className="inline-flex justify-center rounded border border-transparent bg-[#5fd063] px-4 py-2 text-base font-semibold text-white shadow-button-inset hover:bg-[#4fab55] focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2"
         >
           Calculate
-        </button>
+        </Button>
       </div>
     </form>
   );

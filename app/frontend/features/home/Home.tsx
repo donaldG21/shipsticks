@@ -21,8 +21,14 @@ export const Home: FC<HomeProps> = ({}) => {
   return (
     <>
       <Hero />
-      <div className="mt-12 mb-10 md:mt-7 flex justify-center">
-        <Button text={'Launch Calculator'} onClick={() => setIsModalOpen(true)}  />
+      <div className="mt-12 mb-10 md:mt-8 flex justify-center">
+        <Button
+          onClick={() => { setDisableButton(false); setIsModalOpen(true)}}
+          className='w-56 h-14'
+          size='lg'
+        >
+          Launch Calculator
+        </Button>
       </div>
       {product && (
         <div className='m-10 flex justify-center'>
