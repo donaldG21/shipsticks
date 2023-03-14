@@ -38,13 +38,15 @@ export const ShippingForm: FC<ShippingFormProps> = ({ onSubmit, product, disable
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="grid sm:grid-cols-2 gap-y-10 gap-x-20 px-8 py-8">
         {Object.keys(dimensions).map((dimension) => {
-          return (<InputField
-            key={dimension}
-            type='number'
-            label={`${dimension.charAt(0).toUpperCase() + dimension.slice(1)}`}
-            error={errors[dimension]}
-            registration={register(dimension, { ...inputOpts, max: eval(dimension) })}
-        />)
+          return (
+            <InputField
+              key={dimension}
+              type='number'
+              label={`${dimension.charAt(0).toUpperCase() + dimension.slice(1)}`}
+              error={errors[dimension]}
+              registration={register(dimension, { ...inputOpts, max: eval(dimension) })}
+            />
+          )
         })}
       </div>
       {isSubmitted && !isLoading && !product && Object.keys(errors).length === 0 && (
