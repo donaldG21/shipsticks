@@ -19,7 +19,6 @@ export const ShippingForm: FC<ShippingFormProps> = ({ onSubmit, product, disable
     formState: { errors, isSubmitted, isSubmitting },
   }: UseFormReturn = useForm();
 
-
   const inputOpts = { required: true, min: 0, valueAsNumber: true };
   const dimensions: any = {
     weight: 'heavy',
