@@ -32,7 +32,7 @@ export const Home: FC<HomeProps> = ({}) => {
       </div>
       {product && (
         <div className='m-10 flex justify-center'>
-          <ProductCard product={product}/>
+          <ProductCard product={product} />
         </div>
       )}
       <Modal>
