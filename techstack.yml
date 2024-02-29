@@ -2,7 +2,7 @@ repo_name: donaldG21/shipsticks
 report_id: 8d987752978039a924f0c71760751aa5
 version: 0.1
 repo_type: Public
-timestamp: '2024-01-18T17:31:39+00:00'
+timestamp: '2024-02-29T19:30:36+00:00'
 requested_by: donaldG21
 provider: github
 branch: main
@@ -451,6 +451,13 @@ tools:
   last_updated_by: Donald Granados
   last_updated_on: 2023-03-07 19:51:15.000000000 Z
   vulnerabilities:
+  - name: Vite dev server option `server.fs.deny` can be bypassed when hosted on case-insensitive
+      filesystem
+    cve_id: CVE-2024-23331
+    cve_url: https://github.com/advisories/GHSA-c24v-8rfc-w8vw
+    detected_date: Jan 20
+    severity: high
+    first_patched: 4.5.2
   - name: Vite Server Options (server.fs.deny) can be bypassed using double forward-slash
       (//)
     cve_id: CVE-2023-34092
@@ -472,6 +479,13 @@ tools:
   detection_source: Gemfile
   last_updated_by: Donald Granados
   last_updated_on: 2023-03-07 19:51:15.000000000 Z
+  vulnerabilities:
+  - name: Rack CORS Middleware has Insecure File Permissions
+    cve_id: CVE-2024-27456
+    cve_url: https://github.com/advisories/GHSA-785g-282q-pwvx
+    detected_date: Feb 27
+    severity: moderate
+    first_patched: 
 - name: selenium-webdriver
   description: WebDriver is a tool for writing automated tests of websites
   package_url: https://rubygems.org/selenium-webdriver
